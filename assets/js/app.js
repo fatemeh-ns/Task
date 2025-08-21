@@ -5,9 +5,6 @@ import {
   renderCurrentMonthDays,
   renderDayEvents,
 } from "./functions.js";
-git add .
-git commit -m "update"
-git push
 
 const $ = document;
 const monthToggle = $.querySelector(".calendar__month-toggle");
