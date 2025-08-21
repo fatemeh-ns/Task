@@ -23,7 +23,7 @@ export const renderCurrentMonthDays = (
   daysInMonth,
   res,
   daysContainer
-) => {  
+) => {
   for (let d = 1; d <= daysInMonth; d++) {
     const isToday =
       d === today.getDate() &&
@@ -31,10 +31,14 @@ export const renderCurrentMonthDays = (
       year === today.getFullYear();
 
     const hasEvent = res.some((event) => event.day === d);
+    const isHoliday = res.some(
+      (event) => event.day === d && event.is_holiday === 1
+    );
 
     const classes = ["current_month_days"];
     if (isToday) classes.push("today");
     if (hasEvent) classes.push("has-event");
+    if (isHoliday) classes.push("holiday");
 
     daysContainer.insertAdjacentHTML(
       "beforeend",
@@ -56,11 +60,6 @@ export const renderDayEvents = (
       const eventsForDay = res.filter(
         (event) => parseInt(event.day) === dayClicked
       );
-      const isHoliday = eventsForDay.some((ev) => ev.is_holiday === 1);
-      if (isHoliday) {
-        e.target.classList.add("holiday");
-      }
-
       eventsContainer.innerHTML = "";
       eventsForDay.forEach((ev) => {
         eventsContainer.insertAdjacentHTML(

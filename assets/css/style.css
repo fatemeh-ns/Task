@@ -235,10 +235,6 @@ main {
   border-radius: var(--border-radius);
 }
 
-.holiday {
-  color: red;
-}
-
 .prev_month_days,
 .next_month_days {
   color: #bdbdbd;
@@ -261,6 +257,12 @@ main {
   font-weight: bold;
   cursor: pointer;
 }
+
+.holiday {
+  color: red !important;
+  font-weight: bold;
+}
+
 
 .calendar__add-event {
   height: 14.5rem;
