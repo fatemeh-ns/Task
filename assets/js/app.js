@@ -83,7 +83,12 @@ addEventBtn.addEventListener("click", () => {
 });
 
 goTodayBtn.addEventListener("click", () => {
-  if (selectedDate.month === today.getMonth()) return;
+  if (
+    selectedDate.month === today.getMonth() &&
+    selectedDate.year === today.getFullYear()
+  ) {
+    return;
+  }
 
   selectedDate = { year: today.getFullYear(), month: today.getMonth() };
   renderCalendar(selectedDate.year, selectedDate.month);

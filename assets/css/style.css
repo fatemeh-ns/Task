@@ -48,10 +48,12 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100vh;
 }
 
 .calendar__calendar-wrapper {
   width: 35rem;
+  height: 25rem;
   padding: var(--padding);
   margin: var(--margin-y);
   border-radius: var(--border-radius);
@@ -265,7 +267,7 @@ main {
 
 
 .calendar__add-event {
-  height: 14.5rem;
+  height: 14rem;
   position: relative;
   margin: var(--margin-x);
 }
@@ -301,7 +303,6 @@ main {
 }
 
 .calendar__add-event button {
-  margin: 0.5rem 0;
   padding: var(--padding);
   background-color: var(--primary-color);
   color: #fff;
