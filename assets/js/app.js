@@ -5,6 +5,9 @@ import {
   renderCurrentMonthDays,
   renderDayEvents,
 } from "./functions.js";
+git add .
+git commit -m "update"
+git push
 
 const $ = document;
 const monthToggle = $.querySelector(".calendar__month-toggle");
@@ -17,8 +20,8 @@ const yearBtnElm = $.querySelector(".year__dropdown-btn");
 const addEventForm = $.querySelector(".calendar__add-event-form");
 const addEventBtn = $.querySelector(".calendar__add-event-Btn");
 const goTodayBtn = $.querySelector(".calendar__go-today-Btn");
-const prevBtn = document.querySelector(".calendar__nav-btn--prev");
-const nextBtn = document.querySelector(".calendar__nav-btn--next");
+const prevBtn = $.querySelector(".calendar__nav-btn--prev");
+const nextBtn = $.querySelector(".calendar__nav-btn--next");
 const monthItem = $.querySelectorAll(".month__list-item");
 let daysContainer = $.querySelector(".calendar__days");
 let eventsContainer = $.querySelector(".calendar__events");
@@ -160,7 +163,7 @@ const updateCalendarHeader = (year, month) => {
 };
 
 yearBtnElm.addEventListener("click", () => {
-  const inputValue = yearInputElm.value.trim();  
+  const inputValue = yearInputElm.value.trim();
   selectedDate = { ...selectedDate, year: parseInt(inputValue, 10) };
 
   if (inputValue) {
