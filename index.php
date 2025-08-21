@@ -57,11 +57,13 @@ session_start();
                                         <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                     </svg>
                                 </button>
-
-                                <div class="year__dropdown">
-                                    <button class="year__dropdown-btn">go</button>
-                                    <input class="year__dropdown-input" type="number" placeholder="سال را وارد کنید">
-                                </div>
+                                <section class="year__dropdown">
+                                    <div class="year__dropdown-input-box">
+                                        <button class="year__dropdown-btn">go</button>
+                                        <input class="year__dropdown-input" type="number" placeholder="سال را وارد کنید">
+                                    </div>
+                                    <div class="yearError"></div>
+                                </section>
 
                                 <div class="calendar__header-month-name"></div>
 

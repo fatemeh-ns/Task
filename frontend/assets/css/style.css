@@ -152,26 +152,42 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+}
+.year__dropdown-input-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  padding: .1rem;
 }
 
-.year__dropdown button {
-  width: 5rem;
+.year__dropdown-input-box button {
+  width: 8rem;
   padding: var(--padding);
+  height: 100%;
   border: none;
   border-radius: var(--border-radius);
   background-color: var(--primary-color);
   color: var(--bg-color);
 }
 
-.year__dropdown input {
+.year__dropdown-input-box input {
   width: 100%;
   padding: var(--padding);
   border: none;
   text-align: end;
 }
 
-.year__dropdown input:focus {
+.year__dropdown-input-box input:focus {
   outline: none;
+}
+
+.yearError {
+  color: red;
+  font-size: small;
 }
 
 .month__list {

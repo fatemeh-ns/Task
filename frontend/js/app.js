@@ -6,37 +6,26 @@ import {
   renderDayEvents,
 } from "./functions.js";
 
-const $ = document;
-const monthToggle = $.querySelector(".calendar__month-toggle");
-const yearToggle = $.querySelector(".calendar__year-toggle");
-const monthDropdown = $.querySelector(".month__dropdown");
-const yearDropdown = $.querySelector(".year__dropdown");
-const monthName = $.querySelector(".calendar__header-month-name");
-const yearInputElm = $.querySelector(".year__dropdown-input");
-const yearBtnElm = $.querySelector(".year__dropdown-btn");
-const addEventForm = $.querySelector(".calendar__add-event-form");
-const addEventBtn = $.querySelector(".calendar__add-event-Btn");
-const goTodayBtn = $.querySelector(".calendar__go-today-Btn");
-const prevBtn = $.querySelector(".calendar__nav-btn--prev");
-const nextBtn = $.querySelector(".calendar__nav-btn--next");
-const monthItem = $.querySelectorAll(".month__list-item");
-let daysContainer = $.querySelector(".calendar__days");
-let eventsContainer = $.querySelector(".calendar__events");
-
-const months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
+import {
+  $,
+  monthToggle,
+  yearToggle,
+  monthDropdown,
+  yearDropdown,
+  monthName,
+  yearInputElm,
+  yearBtnElm,
+  addEventForm,
+  addEventBtn,
+  goTodayBtn,
+  prevBtn,
+  nextBtn,
+  monthItem,
+  yearErrorElm,
+  daysContainer,
+  eventsContainer,
+  months,
+} from "./calendarElements.js";
 
 const today = new Date();
 let selectedDate = { year: today.getFullYear(), month: today.getMonth() };
@@ -166,11 +155,22 @@ const updateCalendarHeader = (year, month) => {
 
 yearBtnElm.addEventListener("click", () => {
   const inputValue = yearInputElm.value.trim();
-  selectedDate = { ...selectedDate, year: parseInt(inputValue, 10) };
+  const year = parseInt(inputValue, 10);
+  selectedDate = { ...selectedDate, year };
+  console.log(inputValue);
 
-  if (inputValue) {
-    renderCalendar(parseInt(inputValue), selectedDate.month);
+  if (!/^\d{4}$/.test(inputValue) || year < 1900 || year > 2100) {
+    console.log("if");
+
+    yearErrorElm.textContent =
+      ".لطفاً سال معتبر 4 رقمی بین 1900 تا 2100 وارد کنید";
+    return;
   }
+
+  yearErrorElm.textContent = "";
+  yearInputElm.textContent = "";
+
+  renderCalendar(parseInt(inputValue), selectedDate.month);
 
   updateCalendarHeader(selectedDate.year, months[selectedDate.month]);
 });
