@@ -1,7 +1,7 @@
 <?php
-require_once 'config.php';
-require_once 'Event.php';
-require_once 'month_day.php';
+require_once './backend/config.php';
+require_once './backend/Event.php';
+require_once './backend/month_day.php';
 session_start();
 ?>
 
@@ -11,7 +11,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Calendar</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./frontend//assets//css//style.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@ session_start();
 
                         <button class="calendar__add-event-Btn">ADD EVENT</button>
                         <button class="calendar__go-today-Btn">TODAY</button>
-                        <form class="calendar__add-event-form" method="POST" action="add_event.php">
+                        <form class="calendar__add-event-form" method="POST" action="/Task/backend/add_event.php">
                             <input type="number" name="day" min="1" max="31" placeholder="day..." required>
 
                             <select name="month" required>
@@ -121,7 +121,7 @@ session_start();
         </main>
 
     </div>
-    <script type="module" src="./assets/js/app.js"></script>
+    <script type="module" src="./frontend/js/app.js"></script>
 </body>
 
 </html>

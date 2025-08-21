@@ -1,6 +1,6 @@
 <?php
-require_once('./config.php');
-require_once 'Event.php';
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/Event.php';
 
 header('Content-Type: application/json');
 
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         addEvent($conn, $day, $month, $year, $title, $description, $is_recurring);
-        header('Location: index.php');
+        header('Location: /Task/index.php');
         exit();
     } catch (Exception $e) {
         echo json_encode(['error' => $e->getMessage()]);

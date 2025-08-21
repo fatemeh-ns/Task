@@ -1,12 +1,12 @@
 export async function saveMonth(month) {
   try {
-    const response = await fetch("save_month.php", {
+    const response = await fetch("/Task/backend/save_month.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
 
-      body: JSON.stringify({month}),
+      body: JSON.stringify({ month }),
     });
 
     if (!response.ok) {
@@ -23,7 +23,7 @@ export async function saveMonth(month) {
 
 export async function getEvents(month, year) {
   try {
-    const response = await fetch("get_events.php", {
+    const response = await fetch("/Task/backend/get_events.php", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ month: month + 1, year }),
