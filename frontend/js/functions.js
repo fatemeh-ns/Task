@@ -64,7 +64,7 @@ export const renderDayEvents = (
       eventsForDay.forEach((ev) => {
         eventsContainer.insertAdjacentHTML(
           "beforeend",
-          `<h3>${ev.day} ${months[ev.month]} : ${ev.title}</h3>
+          `<h3>${ev.day} ${months[ev.month-1]} : ${ev.title}</h3>
              <div>${ev.description}</div>
              `
         );
