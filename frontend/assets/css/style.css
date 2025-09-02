@@ -31,6 +31,153 @@
   justify-content: center;
 }
 
+nav {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Tahoma", sans-serif;
+  border-bottom: 1px solid var(--bg-color);
+}
+
+.login_btn {
+  position: relative;
+  width: 7rem;
+  padding: var(--padding);
+  height: 100%;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  font-family: "Tahoma", sans-serif;
+}
+.login_btn:hover {
+  cursor: pointer;
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  transition: opacity 1s ease-out;
+  border: 1px solid var(--primary-color);
+}
+
+.nav__title {
+  width: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav__title svg {
+  color: var(--primary-color);
+  width: 3rem;
+  height: 3rem;
+  stroke-width: 2;
+}
+
+.login_box,
+.signin_box {
+  position: absolute;
+  width: 20rem;
+  top: 6.2rem;
+  left: 10rem;
+  visibility: hidden;
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+}
+
+.login_content-header,
+.signin_content-header {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login_box_close-btn,
+.signin_box_close-btn {
+  width: 1rem;
+  height: 1rem;
+}
+
+.login_box_close-btn:hover,
+.signin_box_close-btn:hover,
+.logout_btn:hover {
+  cursor: pointer;
+}
+
+.login_form,
+.signin_form {
+  font-family: "Tahoma", sans-serif;
+  height: 40vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signin_form {
+  height: 30vh;
+}
+
+.login_form input,
+.signin_form input {
+  padding: var(--padding);
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  text-align: right;
+}
+.login_form button,
+.signin_form button {
+  padding: var(--padding);
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.switch_to_signin,
+.switch_to_login {
+  font-size: small;
+}
+
+.login_box.active,
+.signin_box.active {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav_items {
+  width: 22rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user_info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.user_icon {
+  width: 1rem;
+  height: 1.2rem;
+}
+
+.logout_btn {
+  width: 10rem;
+  padding: var(--padding);
+  height: 100%;
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  font-family: "Tahoma", sans-serif;
+}
+
 main {
   width: 100%;
 }
@@ -161,7 +308,7 @@ main {
   align-items: center;
   border: 1px solid var(--primary-color);
   border-radius: var(--border-radius);
-  padding: .1rem;
+  padding: 0.1rem;
 }
 
 .year__dropdown-input-box button {
@@ -185,9 +332,12 @@ main {
   outline: none;
 }
 
-.yearError {
+.yearError,
+.login_error,
+.signin_error {
   color: red;
   font-size: small;
+  text-align: center;
 }
 
 .month__list {
@@ -263,6 +413,22 @@ main {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in;
+  font-family: "Tahoma", sans-serif;
+}
+
+.calendar__event-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.calendar__event-header h2 {
+  margin-right: 0.5rem;
+  color: var(--primary-color);
+}
+
+.calendar__events p {
+  margin-right: 0.5rem;
 }
 
 .calendar__events.active {
@@ -315,6 +481,7 @@ main {
   padding: var(--padding);
   border: 1px solid #ddd;
   border-radius: var(--border-radius);
+  text-align: right;
 }
 
 .calendar__add-event button {
@@ -324,6 +491,7 @@ main {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font-family: "Tahoma", sans-serif;
 }
 
 select {
@@ -340,6 +508,13 @@ select {
 
 select:hover {
   border-color: #3d5afe;
+}
+
+.noty_body {
+  text-align: center;
+  background-color: #81d4fa;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
 }
 
 /* Responsive */
